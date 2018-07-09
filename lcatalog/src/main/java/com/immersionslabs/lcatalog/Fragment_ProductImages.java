@@ -89,7 +89,6 @@ public class Fragment_ProductImages extends Fragment implements OnAnimationEndLi
     LikeButton likeButton;
     SessionManager sessionmanager;
     String user_log_type;
-    String article_3ds_file_name;
 
     public Fragment_ProductImages() {
         // Required empty public constructor
@@ -132,7 +131,6 @@ public class Fragment_ProductImages extends Fragment implements OnAnimationEndLi
         article_images = getArguments().getString("article_images");
         article_name = getArguments().getString("article_name");
         article_3ds = getArguments().getString("article_3ds");
-        article_3ds_file_name = getArguments().getString("article_3ds_file");
         article_id = getArguments().getString("article_id");
         article_price = getArguments().getString("article_new_price");
         article_vendor_id = getArguments().getString("article_vendor_id");
@@ -140,7 +138,6 @@ public class Fragment_ProductImages extends Fragment implements OnAnimationEndLi
         Log.e(TAG, "onCreateView: vendor id" + article_vendor_id);
 
         Log.d(TAG, "onCreateView:3ds" + article_3ds);
-        Log.d(TAG, "onCreateView:3dsfile" + article_3ds_file_name);
         Log.d(TAG, "onCreateView:name" + article_name);
 
         if (!Objects.equals(user_log_type, "CUSTOMER")) {

@@ -15,7 +15,7 @@ public class ProductPageAdapter extends FragmentStatePagerAdapter {
     private static final String TAG = "ProductPageAdapter";
 
     private String a_name, a_description, a_old_price, a_discount, a_newPrice, a_dimensions,
-            a_width, a_height, a_length, a_position, a_id, a_images, a_vendor_id, a_3ds, a_pattern, a_3ds_file;
+            a_width, a_height, a_length, a_position, a_id, a_images, a_vendor_id, a_3ds, a_pattern;
 
     private int mNumOfTabs;
 
@@ -35,8 +35,7 @@ public class ProductPageAdapter extends FragmentStatePagerAdapter {
                               String images,
                               String article_vendor_id,
                               String article_3ds,
-                              String article_pattern,
-                              String article_3ds_file) {
+                              String article_pattern) {
 
         super(fragmentManager);
 
@@ -56,7 +55,6 @@ public class ProductPageAdapter extends FragmentStatePagerAdapter {
         this.a_vendor_id = article_vendor_id;
         this.a_3ds = article_3ds;
         this.a_pattern = article_pattern;
-        this.a_3ds_file = article_3ds_file;
 
         Log.e(TAG, "Acquired Article Details: " + a_name
                 + " ---" + a_dimensions
@@ -65,8 +63,7 @@ public class ProductPageAdapter extends FragmentStatePagerAdapter {
                 + " ---" + a_id
                 + " ---" + a_position
                 + " ---" + a_3ds
-                + " ---" + a_pattern
-                + " ---" + a_3ds_file);
+                + " ---" + a_pattern);
     }
 
     @Override
@@ -85,7 +82,6 @@ public class ProductPageAdapter extends FragmentStatePagerAdapter {
                 b_tab1.putString("article_name", a_name);
                 b_tab1.putString("article_3ds", a_3ds);
                 b_tab1.putString("article_new_price", a_newPrice);
-                b_tab1.putString("article_3ds_file", a_3ds_file);
                 b_tab1.putString("article_vendor_id", a_vendor_id);
 
                 Fragment_ProductImages tab1 = new Fragment_ProductImages();

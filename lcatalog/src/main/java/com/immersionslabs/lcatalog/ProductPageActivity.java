@@ -36,7 +36,6 @@ public class ProductPageActivity extends AppCompatActivity {
 
     String article_3ds, article_pattern;
 
-    String article_3ds_file;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -101,7 +100,6 @@ public class ProductPageActivity extends AppCompatActivity {
             article_pattern = (String) b.getCharSequence("article_pattern");
 
             article_3ds = (String) b.getCharSequence("article_3ds");
-            article_3ds_file = (String) b.getCharSequence("article_3dsfile");
 
             oldPrice = (String) b.getCharSequence("article_price");
 
@@ -140,7 +138,6 @@ public class ProductPageActivity extends AppCompatActivity {
             Log.e(TAG, "Article Vendor Id----" + article_vendor_id);
             Log.e(TAG, "Article 3ds Zip File----" + article_3ds);
             Log.e(TAG, "Article Pattern File----" + article_pattern);
-            Log.e(TAG, "Article 3DS File----" + article_3ds_file);
 
         }
 
@@ -153,7 +150,7 @@ public class ProductPageActivity extends AppCompatActivity {
         final ViewPager viewPager = findViewById(R.id.product_pager);
         final ProductPageAdapter adapter = new ProductPageAdapter(getSupportFragmentManager(), tabLayout.getTabCount(),
                 name, description, oldPrice, discount, newPrice, dimensions, width, height, length, position, id, images,
-                article_vendor_id, article_3ds, article_pattern, article_3ds_file);
+                article_vendor_id, article_3ds, article_pattern);
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
